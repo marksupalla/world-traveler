@@ -1,0 +1,28 @@
+{
+  "_id":{"$oid":"000000000000000000000001"},
+  "name":"Cairo",
+  "start":{"$date":477295200000},
+  "end":{"$date":477296900000},
+  "lat":2,
+  "lng":21,
+  "photo":"http://images.com/cairo.jpg"
+}
+{
+  "_id":{"$oid":"000000000000000000000002"},
+  "name":"Berlin",
+  "start":{"$date":477295230000},
+  "end":{"$date":477296933000},
+  "lat":30,
+  "lng":25,
+  "photo":"http://images.com/berlin.jpg"
+}
+{
+  "_id":{"$oid":"000000000000000000000003"},
+  "name":"Madrid",
+  "start":{"$date":477295200000},
+  "end":{"$date":477296900000},
+  "lat":26,
+  "lng":42,
+  "photo":"http://images.com/madrid.jpg"
+}
+

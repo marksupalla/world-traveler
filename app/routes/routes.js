@@ -12,6 +12,9 @@ module.exports = function(app, express){
   app.use(methodOverride());
 
   app.get('/', home.index);
+  app.get('/', about.index);
+  app.get('/', faq.index);
+  app.get('/', contact.index);
 
   console.log('Routes Loaded');
 };

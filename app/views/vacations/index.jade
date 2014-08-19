@@ -1,0 +1,26 @@
+extends ../shared/template
+block content
+  .row
+    .col-xs-12
+      #map
+  .row
+    .col-xs-12
+      table(class='table table-striped')
+        thead
+          th Name
+          th Start
+          th End
+          th Lat
+          th Lng
+        tbody
+        each vacation in vacations
+          tr
+            td=vacation.name
+            td=moment(vacation.start).format('MMM Do YYYY')
+            td=moment(vacation.end).format('MMM Do YYYY')
+            td=vacation.lat.toFixed(3)
+            td=vacation.lng.toFixed(3)
+
+block scripts
+  script(src='/jsuser/vacation.js')
+

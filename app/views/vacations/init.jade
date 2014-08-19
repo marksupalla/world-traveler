@@ -1,16 +1,16 @@
 extends ../shared/template
 block content
   .col-xs-4
-    form(role='form')
+    form(role='form', method='post', action='/vacations')
       input#lat(type='hidden', name='lat')
       input#lng(type='hidden', name='lng')
       .form-group
           label(for='Name') Name
             input#name.form-control(type='text', placeholder='Name', name='name')
           label(for='Start') Start Date
-            input#start.form-control(type='date', placeholder='Start Date', name='from')
+            input#start.form-control(type='date', placeholder='Start Date', name='start')
           label(for='End') End Date
-            input#end.form-control(type='date', placeholder='End Date', name='to')
+            input#end.form-control(type='date', placeholder='End Date', name='end')
             button.btn.btn-default(type='submit', class='btn btn-warning') Save
 
 

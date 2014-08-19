@@ -1,6 +1,4 @@
-/*
-
- global google:true 
+/* global google:true */
 
 (function(){
   'use strict';
@@ -8,18 +6,27 @@
 var map;
 
   $(document).ready(function(){
-    initMap(36.2, -86.7, 9);
-    var data = getPositions();
+    initMap(36.2, -86.7, 2);
+    var positions = getPositions();
+    positions.forEach(function(pos){
+      addMarker(pos.lat, pos.lng, pos.name, google.maps.Animation.DROP);
+    });
   });
 
+  function addMarker(lat, lng, name){
+    var latLng = new google.maps.LatLng(lat, lng);
+    new google.maps.Marker({map: map, position: latLng, title: name});
+  }
+
   function getPositions(){
-    var objects = $('table tbody tr').map(function(index, tr){
+    var positions = $('table tbody tr').toArray().map(function(tr){
       var name  = $(tr).attr('data-name'),
           lat   = $(tr).attr('data-lat'),
           lng   = $(tr).attr('data-lng'),
-          obl   = {name:name, lat:parseFloat(lat), lng:parseFloat(lng)};
-
+          pos   = {name:name, lat:parseFloat(lat), lng:parseFloat(lng)};
+      return pos;
     });
+    return positions;
   }
 
   function initMap(lat, lng, zoom){
@@ -29,4 +36,3 @@ var map;
   }
 })();
 
-*/

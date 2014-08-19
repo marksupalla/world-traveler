@@ -55,4 +55,13 @@ describe('Vacation', function(){
       });
     });
   });
+
+  describe('.findById', function(){
+    it('should find a vacation by its id', function(done){
+      Vacation.findById('000000000000000000000001', function(vacation){
+        expect(vacation.name).to.equal('Cairo');
+        done();
+      });
+    });
+  });
 });

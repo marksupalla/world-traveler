@@ -6,7 +6,7 @@
 var map;
 
   $(document).ready(function(){
-    initMap(36.2, -86.7, 2);
+    initMap(36.2, -86.7, 1);
     var positions = getPositions();
     positions.forEach(function(pos){
       addMarker(pos.lat, pos.lng, pos.name, google.maps.Animation.DROP);
